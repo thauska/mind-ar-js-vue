@@ -3,6 +3,7 @@
 This is an example project of using [MindAR](https://github.com/hiukim/mind-ar-js) in Vue 3 
 
 # Screenshot
+![screenshot](https://raw.githubusercontent.com/thauska/mind-ar-js-vue/main/screenshot.png)
 
 # It demonstrates:
 
