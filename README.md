@@ -1,23 +1,21 @@
-# mind-ar-js-vue
+# Vue 3 example with MindAR 
 
-## Project setup
+This is an example project of using [MindAR](https://github.com/hiukim/mind-ar-js) in Vue 3 
+
+# Screenshot
+
+# It demonstrates:
+
+1. how to import MindAR as a npm package
+2. how to create a component for MindAR in Vue 3
+
+# To run
 ```
 yarn install
 ```
 
-### Compiles and hot-reloads for development
 ```
 yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
 ```
 
 ### Customize configuration
