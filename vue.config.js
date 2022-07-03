@@ -1,4 +1,7 @@
 module.exports = {
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/mind-ar-js-vue'
+    : '/',
   chainWebpack: config => {
     config.module
       .rule('vue')
