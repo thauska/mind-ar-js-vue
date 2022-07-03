@@ -1,0 +1,42 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+      
+      # Install Vue CLI
+      - name: Install Vue CLI
+        run: npm install -g @vue/cli 
+      
+      # Install dependencies
+      - name: Install dependencies
+        run: yarn
+      
+      # Build application
+      - name: Build
+        run: yarn build
+      
+      # Deploy built application to GitHub pages branch
+      - name: Deploy to GitHub Pages
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git checkout --orphan gh-pages
+          git --work-tree dist add --all
+          git --work-tree dist commit -m 'Deploy'
+          git push origin HEAD:gh-pages --force
+          rm -r dist
+          git checkout -f main
+          git branch -D gh-pages
